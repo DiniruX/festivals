@@ -1,0 +1,131 @@
+:root {
+  --primary: #00393f;
+  --accent: #ffce00;
+  --bg: #fff8f0;
+  --text: #1f1f1f;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Noto Serif Sinhala", serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.festival-detail {
+  max-width: 95%;
+  height: 650px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.festival-detail img {
+  width: 100%;
+  max-width: 50%;
+  height: 100%;
+    object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.festival-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+  max-height: 100%;
+  padding-right: 1rem;
+}
+
+.festival-meta h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.festival-meta p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.festival-meta .type {
+  font-style: italic;
+  color: #555;
+}
+
+.festival-meta .date {
+  color: #444;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .festival-detail {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .festival-detail img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  .festival-meta h2 {
+    font-size: 1.5rem;
+  }
+
+  .festival-meta p {
+    font-size: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+}

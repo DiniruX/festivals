@@ -1,0 +1,239 @@
+:root {
+  --primary: #00393f;
+  --accent: #ffce00;
+  --bg: #fff8f0;
+  --text: #1f1f1f;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif Sinhala", serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url("./assets/images/hero-bg.jpg")
+    no-repeat center center/cover;
+  background-size: cover;
+  background-color: var(--primary); /* fallback color */
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.month-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.month-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  width: 100%;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.month-card:hover {
+  transform: scale(1.05);
+}
+
+.month-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: auto;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  background: var(--accent);
+  color: black;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.month-nav {
+  text-align: center;
+  background: #f2f2f2;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.calendar-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.calendar-links a {
+  background: var(--accent);
+  color: black;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.calendar-links a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.festival-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.festival-card {
+  display: flex;
+  flex-direction: column;
+  width: 49%;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  background: #fffefc;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.3s ease;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.festival-card:hover {
+  transform: scale(1.01);
+  background-color: #eaeaea;
+  animation-delay: 5s;
+}
+
+.festival-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-right: 2px solid #eee;
+  padding: 5px 5px 0px 5px;
+}
+
+.festival-info {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.festival-info h4 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+}
+
+.festival-info .date {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.festival-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .festival-card {
+    flex: 1 1 100%;
+    flex-direction: column;
+  }
+
+  .festival-card img {
+    width: 100%;
+    height: 180px;
+    border-right: none;
+    border-bottom: 2px solid #eee;
+  }
+}
