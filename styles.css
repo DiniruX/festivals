@@ -6,6 +6,11 @@
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
+@font-face {
+  font-family: "mainFont";
+  src: url("./assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -17,7 +22,7 @@ html {
 }
 
 body {
-  font-family: "Noto Serif Sinhala", serif;
+  font-family: "mainFont", sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -26,32 +31,87 @@ body {
 header {
   background: var(--primary);
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
+}
+
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-}
-
-header h1 {
-  font-size: 1.8rem;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
   gap: 1rem;
 }
 
-nav a {
+.header-item {
+  flex: 1;
+  text-align: center;
+}
+
+/* h1 styling */
+.header-item.title h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* nav styling */
+.header-item.nav nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-item.nav nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1rem;
+}
+
+/* button styling */
+.header-item.audio button {
+  background: var(--accent);
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: var(--shadow) 2px 4px;
+}
+
+/* ✅ MOBILE FIX */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-item {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .header-item.title h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-item.nav nav ul {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .header-item.audio button {
+    width: auto;
+    font-size: 0.9rem;
+  }
 }
 
 .hero {
-  background: url("./assets/images/hero-bg.jpg")
-    no-repeat center center/cover;
+  background: url("./assets/images/hero-bg.jpg") no-repeat center center/cover;
   background-size: cover;
   background-color: var(--primary); /* fallback color */
   color: white;
@@ -145,6 +205,7 @@ button {
   justify-content: center;
   gap: 0.5rem;
   margin-top: 0.5rem;
+  
 }
 
 .calendar-links a {
@@ -155,6 +216,7 @@ button {
   border-radius: 6px;
   font-weight: bold;
   transition: background 0.3s ease;
+  box-shadow: var(--shadow) 2px 4px;
 }
 
 .calendar-links a:hover {
@@ -224,7 +286,7 @@ button {
   line-height: 1.4;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .festival-card {
     flex: 1 1 100%;
     flex-direction: column;

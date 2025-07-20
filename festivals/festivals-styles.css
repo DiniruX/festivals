@@ -6,8 +6,13 @@
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
+@font-face {
+  font-family: "mainFont";
+  src: url("../assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+}
+
 body {
-  font-family: "Noto Serif Sinhala", serif;
+  font-family: "mainFont", sans-serif;
   background: var(--bg);
   color: var(--text);
   margin: 0;
@@ -23,6 +28,16 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.header-item.audio button {
+  background: var(--accent);
+  color: black;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: #00393f 2px 4px;
 }
 
 header h1 {
@@ -55,10 +70,9 @@ nav a:hover {
 }
 
 .festival-detail img {
-  width: 100%;
   max-width: 50%;
   height: 100%;
-    object-fit: contain;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 2px 10px var(--shadow);
 }
@@ -67,7 +81,7 @@ nav a:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto; 
+  overflow-y: auto;
   max-height: 100%;
   padding-right: 1rem;
 }
@@ -106,15 +120,30 @@ nav a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
   .festival-detail {
     flex-direction: column;
     padding: 1rem;
   }
 
   .festival-detail img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
+    max-width: 100%;
+    height: 300px;
+    object-fit: contain;
   }
 
   .festival-meta h2 {
