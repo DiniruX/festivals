@@ -10,7 +10,7 @@ if (slug && festivals[slug]) {
   document.getElementById("festival-date").textContent = fest.date;
   document.getElementById("festival-img").src = fest.image;
   document.getElementById("festival-img").alt = fest.name;
-  document.getElementById("festival-desc").textContent = fest.desc;
+  document.getElementById("festival-desc").innerHTML = fest.desc;
   document.getElementById("festival-video").src = fest.video;
 } else {
   document.body.innerHTML = `<h2 style="text-align:center">Festival not found.</h2>`;
